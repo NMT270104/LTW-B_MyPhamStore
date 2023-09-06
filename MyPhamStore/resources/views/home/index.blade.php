@@ -9,8 +9,8 @@
                 <div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
                     <div class="hero-text">
                         <div class="hero-text-tablecell">
-                            <p class="subtitle">Fresh & Organic</p>
-                            <h1>Delicious Seasonal Fruits</h1>
+                            <p class="subtitle" style="font-size: 50px">SVR</p>
+                            <h1>Buy one get the second</h1>
                             <div class="hero-btns">
                                 <a href="{{route('product.index')}}" class="boxed-btn">Collection</a>
                                 <a href="#" class="bordered-btn">Contact Us</a>
@@ -45,7 +45,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-6 col-lg-4 mb-2">
-        <img src="{{asset('/img/game.png')}}" alt="" class="img-fluid rounded">
+        <img src="{{asset('/img/products/product-1.png')}}" alt="" class="img-fluid rounded">
     </div>
     <div class="col-md-6 col-lg-4 mb-2">
         <img src="{{asset('/img/safe.png')}}" alt="" class="img-fluid rounded">
