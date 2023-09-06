@@ -58,29 +58,12 @@
 							<ul>
 								<li class="current-list-item"><a href="{{route('home.index')}}">Home</a></li>
 								<li><a href="{{route('home.about')}}">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="404.html">404 page</a></li>
-										<li><a href="{{route('home.about')}}">About</a></li>
-										<li><a href="{{ route('cart.index') }}">Cart</a></li>
-										<li><a href="{{route('myaccount.orders')}}">Check Out</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="news.html">News</a></li>
-										<li><a href="{{ route('product.index') }}">Shop</a></li>
-									</ul>
-								</li>
-								<li><a href="news.html">News</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">News</a></li>
-										<li><a href="single-news.html">Single News</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="#">News</a></li>
+								<li><a href="#">Contact</a></li>
 								<li><a href="{{ route('product.index') }}">Shop</a>
 									<ul class="sub-menu">
 										<li><a href="{{ route('product.index') }}">Shop</a></li>
 										<li><a href="{{route('myaccount.orders')}}">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
 										<li><a href="{{ route('cart.index') }}">Cart</a></li>
 									</ul>
 								</li>

@@ -33,7 +33,7 @@
                         <tbody>
                             @foreach ($viewData["products"] as $product)
                             <tr class="table-body-row">
-                                <td class="product-remove"><a href="{{ route('cart.remove', ['productId' => $product->id]) }}">
+                                <td class="product-remove"><a href="{{ route('cart.remove', ['id' => $product->id]) }}">
                                     <i class="far fa-window-close"></i></a></td>
                                 <td>{{ $product->getId() }}</td>
                                 <td class="product-image"><img src="{{ asset('/storage/' . $product->getImage())}}"

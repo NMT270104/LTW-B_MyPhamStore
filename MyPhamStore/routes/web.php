@@ -27,7 +27,7 @@ Route::get('/products/{id}','App\Http\Controllers\ProductController@show')->name
 
 Route::get('/cart','App\Http\Controllers\CartController@index')->name("cart.index");
 Route::get('/cart/delete','App\Http\Controllers\CartController@delete')->name("cart.delete");
-Route::get('/cart/remove/{productId}', 'CartController@removeProduct')->name('cart.remove');
+Route::get('/cart/remove/{id}','App\Http\Controllers\CartController@remove')->name('cart.remove');
 Route::post('/cart/add/{id}','App\Http\Controllers\CartController@add')->name("cart.add");
 
 Route::middleware('auth')->group(function(){

@@ -37,32 +37,21 @@ class CartController extends Controller
         $request->session()->forget('products');
         return back();
     }
+    public function remove(Request $request, $id) {
+        $products = $request->session()->get("products");
     
-    public function removeProduct($id)
-    {
-        // Tìm sản phẩm trong giỏ hàng
-        $product = Product::find($id);
+        // Kiểm tra xem sản phẩm có tồn tại trong giỏ hàng không
+        if (isset($products[$id])) {
+            // Xóa sản phẩm khỏi giỏ hàng
+            unset($products[$id]);
     
-        if (!$product) {
-            // Xử lý trường hợp sản phẩm không tồn tại
-            return redirect()->route('cart.index')->with('error', 'Sản phẩm không tồn tại trong giỏ hàng.');
+            // Cập nhật giỏ hàng trong session
+            $request->session()->put('products', $products);
         }
     
-        // Lấy danh sách sản phẩm trong session
-        $productsInSession = session()->get("products");
-    
-        // Kiểm tra xem sản phẩm có tồn tại trong session không
-        if (isset($productsInSession[$id])) {
-            // Xoá sản phẩm khỏi session
-            unset($productsInSession[$id]);
-            session()->put('products', $productsInSession);
-        }
-    
-        // Redirect về trang giỏ hàng hoặc trang khác tùy ý
-        return redirect()->route('cart.index')->with('success', 'Sản phẩm đã được xoá khỏi giỏ hàng.');
+        return redirect()->route('cart.index');
     }
     
-
     
     public function purchase(Request $request) {
         $productsInSession = $request->session()->get("products");
