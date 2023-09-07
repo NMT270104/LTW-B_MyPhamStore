@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('title', 'Register')
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>sign up</p>
+                    <h1>Register</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
