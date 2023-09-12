@@ -28,6 +28,8 @@
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+	<link href="{{asset('css/styles.css')}}">
 
     <title>@yield('title', 'Mỹ Phẩm Store')</title>
 </head>
@@ -77,9 +79,10 @@
                                             <li><a href="{{ route('login') }}"><i class="fa-solid fa-user"></i></a></li>
                                             @else
                                             <li><a href="{{route('cart.index')}}"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><form id="logout" action="{{route('logout')}}" method="POST">
+                                            <li>
+											<form id="logout" action="{{route('logout')}}" method="POST">
                                             <a role="button"
-                                            onclick="document.getElementById('logout').submit();">Logout</a>
+                                            onclick="document.getElementById('logout').submit();"><i class="fa-solid fa-right-from-bracket"></i></a>
                                             @csrf
                                             </form>
                                             </li>
