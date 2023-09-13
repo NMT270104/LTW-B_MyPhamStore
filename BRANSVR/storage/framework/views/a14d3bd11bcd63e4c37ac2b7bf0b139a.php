@@ -39,7 +39,7 @@
                                 <td class="product-image"><img src="<?php echo e(asset('/storage/' . $product->getImage())); ?>"
                                     class="img-fluid rounded-start"></td>
                                 <td class="product-name"><?php echo e($product->getName()); ?></td>
-                                <td class="product-price">$<?php echo e($product->getPrice()); ?></td>
+                                <td class="product-price"><?php echo e($product->getPrice()); ?>.000đ</td>
                                 <td class="product-quantity"><?php echo e(session('products')[$product->getId()]); ?></td>
                             </tr>
                             

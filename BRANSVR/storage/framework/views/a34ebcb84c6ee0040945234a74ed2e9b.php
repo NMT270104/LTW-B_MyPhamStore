@@ -1,33 +1,34 @@
-@extends('layouts.admin')
-@section('title', $viewData['title'])
-@section('content')
+
+<?php $__env->startSection('title', $viewData['title']); ?>
+<?php $__env->startSection('content'); ?>
 <div class="container-fluid pt-4 p-4 ">
     <div class="row g-4 justify-content-center">
         <div class="col-auto" style="width: 50%;">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4 text-center" style="color: #F28123">Edit Product</h6>
-                @if($errors->any())
+                <?php if($errors->any()): ?>
                 <ul class="alert alert-danger list-unstyled">
-                    @foreach($errors->all() as $error)
-                        <li>- {{ $error }}</li>
-                    @endforeach
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li>- <?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
-                @endif
-                <form method="POST" action="{{ route('admin.product.update',['id' => $viewData['products']->getId()]) }}"
+                <?php endif; ?>
+                <form method="POST" action="<?php echo e(route('admin.product.update',['id' => $viewData['products']->getId()])); ?>"
                     enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
+                    <?php echo csrf_field(); ?>
+                    <?php echo method_field('PUT'); ?>
                     <div class="mb-3">
                         <label class="form-label" style="color: #F28123">Name Product:</label>
-                        <input name="name" value="{{ $viewData['products']->getName() }}" type="text" class="form-control">
+                        <input name="name" value="<?php echo e($viewData['products']->getName()); ?>" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" style="color: #F28123">Price:</label>
-                        <input name="price" value="{{ $viewData['products']->getPrice() }}" type="number" min="0" class="form-control">
+                        <input name="price" value="<?php echo e($viewData['products']->getPrice()); ?>" type="number" min="0" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" style="color: #F28123">Description</label>
-                        <textarea class="form-control" name="description" rows="3">{{ $viewData['products']->getDescription() }}
+                        <textarea class="form-control" name="description" rows="3"><?php echo e($viewData['products']->getDescription()); ?>
+
                         </textarea>
                     </div>
                     <div class="mb-3">
@@ -44,4 +45,5 @@
         </div>
     </div>
 </div>
-@endsection 
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\LTW-B_Project-MyPhamStore\BRANSVR\resources\views/admin/product/edit.blade.php ENDPATH**/ ?>

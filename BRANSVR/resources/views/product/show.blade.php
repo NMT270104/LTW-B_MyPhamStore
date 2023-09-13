@@ -26,7 +26,7 @@
             <div class="col-md-7">
                 <div class="single-product-content">
                     <h3>{{ $viewData['product']['name'] }}</h3>
-                    <p class="single-product-pricing">${{ $viewData['product']['price'] }}</p>
+                    <p class="single-product-pricing">{{ $viewData['product']['price'] }}.000đ</p>
                     <p>{{ $viewData['product']['description'] }}</p>
                     <div class="single-product-form">
                         <form method="POST" action="{{ route('cart.add', ['id' => $viewData['product']->getId()]) }}">

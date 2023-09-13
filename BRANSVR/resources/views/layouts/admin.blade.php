@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('plugin/fontawesome/css/all.min.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +26,13 @@
 </head>
 
 <body>
+            <!-- Spinner Start -->
+            <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <!-- Spinner End -->
     <div class="sidebar pe-4 pb-3 bg-light">
         <nav class="navbar navbar-dark">
             <a href="{{ route('admin.home.index') }}" class="navbar-brand mx-4 mb-3">
@@ -32,7 +40,7 @@
             </a>
             
             <div class="navbar-nav w-100">
-                <a href="{{ route('admin.home.index') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="{{ route('admin.home.index') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                 <div class="nav-item dropdown">
                     <a href="{{ route('admin.home.index') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                     <div class="dropdown-menu bg-transparent border-0">
@@ -44,7 +52,7 @@
                 <a href="{{ route('admin.product.index') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Manage Product</a>
                 <a href="#" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Form</a>
                 <a href="#" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                <a href="#" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                <a href="{{route('home.index')}}" class="nav-item nav-link"><i class="fa-solid fa-house"></i>Back to Home</a>
             </div>
         </nav>
     </div>
@@ -73,7 +81,7 @@
                     <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0">
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item ">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle" src="{{asset('img/avatar-1.jpg')}}" alt="" style="width: 40px; height: 40px;">
                                 <div class="ms-2">
                                     <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                     <small>15 minutes ago</small>
@@ -83,20 +91,20 @@
                         <hr class="dropdown-divider">
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle" src="{{asset('img/avatar-2.jpg')}}" alt="" style="width: 40px; height: 40px;">
                                 <div class="ms-2">
                                     <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                    <small>15 minutes ago</small>
+                                    <small>30 minutes ago</small>
                                 </div>
                             </div>
                         </a>
                         <hr class="dropdown-divider">
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle" src="{{asset('img/avatar-3.jpg')}}" alt="" style="width: 40px; height: 40px;">
                                 <div class="ms-2">
                                     <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                    <small>15 minutes ago</small>
+                                    <small>60 minutes ago</small>
                                 </div>
                             </div>
                         </a>
@@ -117,12 +125,12 @@
                         <hr class="dropdown-divider">
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item">
                             <h6 class="fw-normal mb-0">New user added</h6>
-                            <small>15 minutes ago</small>
+                            <small>30 minutes ago</small>
                         </a>
                         <hr class="dropdown-divider">
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item">
                             <h6 class="fw-normal mb-0">Password changed</h6>
-                            <small>15 minutes ago</small>
+                            <small>60 minutes ago</small>
                         </a>
                         <hr class="dropdown-divider">
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item text-center">See all notifications</a>
@@ -146,8 +154,9 @@
             </div>
         </nav>
         <!-- Navbar End -->
+    <section style="background-color: white">
         @yield('content')
-
+    </section>
         <a href="{{ route('admin.home.index') }}" class="btn btn-lg btn-lg-square back-to-top" style="background-color: #F28123"><i class="bi bi-arrow-up"></i></a>
 
     <div class="copyright py-4 text-center text-white">

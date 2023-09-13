@@ -39,7 +39,7 @@
                                 <td class="product-image"><img src="{{ asset('/storage/' . $product->getImage())}}"
                                     class="img-fluid rounded-start"></td>
                                 <td class="product-name">{{ $product->getName() }}</td>
-                                <td class="product-price">${{ $product->getPrice() }}</td>
+                                <td class="product-price">{{ $product->getPrice() }}.000đ</td>
                                 <td class="product-quantity">{{ session('products')[$product->getId()] }}</td>
                             </tr>
                             

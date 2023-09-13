@@ -75,6 +75,7 @@
                                             <li><a href="<?php echo e(route('login')); ?>"><i class="fa-solid fa-user"></i></a></li>
                                             <?php else: ?>
                                             <li><a href="<?php echo e(route('cart.index')); ?>"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?php echo e(route('admin.home.index')); ?>"><i class="fa-solid fa-toolbox"></i></a></li>
                                             <li>
 											<form id="logout" action="<?php echo e(route('logout')); ?>" method="POST">
                                             <a role="button"

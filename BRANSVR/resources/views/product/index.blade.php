@@ -23,13 +23,13 @@
                 {{-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> --}}
                 <!-- Product image-->
                 <!--img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /-->
-                <img class="card-img-top" style="width: 450px; height: 200px;"
-                src="{{asset('/storage/' . $product->getImage())}}" alt="..." />
+                <a href="{{ route('product.show', ['id' => $product['id']]) }}"><img class="card-img-top" style="width: 450px; height: 200px;"
+                src="{{asset('/storage/' . $product->getImage())}}" alt="..." /></a>
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
                         <!-- Product name-->
-                        <h5 class="fw-bolder">{{ $product['name'] }}</h5>
+                        <h5 class="fw-bolder"><a style="color: black" href="{{ route('product.show', ['id' => $product['id']]) }}">{{ $product['name'] }}</a></h5>
                         <!-- Product reviews-->
                         <div class="d-flex justify-content-center small text-warning mb-2">
                             <div class="bi-star-fill"></div>
@@ -39,7 +39,7 @@
                             <div class="bi-star-fill"></div>
                         </div>
                             <!-- Product price-->
-                        <span class="">${{ $product['price'] }}</span>
+                        <span class="">{{ $product['price'] }}.000đ</span>
                     </div>
                 </div>
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">

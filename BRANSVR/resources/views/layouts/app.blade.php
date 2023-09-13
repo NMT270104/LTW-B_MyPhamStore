@@ -79,6 +79,7 @@
                                             <li><a href="{{ route('login') }}"><i class="fa-solid fa-user"></i></a></li>
                                             @else
                                             <li><a href="{{route('cart.index')}}"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="{{route('admin.home.index')}}"><i class="fa-solid fa-toolbox"></i></a></li>
                                             <li>
 											<form id="logout" action="{{route('logout')}}" method="POST">
                                             <a role="button"
