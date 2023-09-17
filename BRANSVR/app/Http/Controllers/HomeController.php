@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +10,7 @@ class HomeController extends Controller
     public function index() {
         $viewData = [];
         $viewData["title"] = "Home Page - Mỹ phẩm Store";
+        $viewData['products'] = Product::all();
         return view('home.index')->with("viewData", $viewData);
 
     }

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('/plugin/fontawesome/css/all.min.css')}}">
     <!-- owl carousel -->
     <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
+	<link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}" type="text/css">
 	<!-- magnific popup -->
 	<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 	<!-- animate css -->
@@ -29,18 +30,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-	<link href="{{asset('css/styles.css')}}">
+	<link href="{{asset('css/style.css')}}">
 
+	
     <title>@yield('title', 'Mỹ Phẩm Store')</title>
 </head>
 
 <body>
-    {{-- <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div> --}}
-    <!-- header -->
+
 <header>
     <div class="top-header-area" id="sticker">
 		<div class="container">

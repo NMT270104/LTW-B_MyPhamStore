@@ -43,17 +43,52 @@
 </div>
 <!-- end home page slider -->
 @section('content')
-<div class="row">
-    <div class="col-md-6 col-lg-4 mb-2">
-        <img src="{{asset('/img/products/product-1.png')}}" alt="" class="img-fluid rounded">
-    </div>
-    <div class="col-md-6 col-lg-4 mb-2">
-        <img src="{{asset('/img/safe.png')}}" alt="" class="img-fluid rounded">
-    </div>
-    <div class="col-md-6 col-lg-4 mb-2">
-        <img src="{{asset('/img/submarine.png')}}" alt="" class="img-fluid rounded">
+<div class="container py-5">
+    <div class="row">
+        <div class="col">
+            <h2>Featured Product</h2>
+        </div>
     </div>
 </div>
-    
+
+<div class="row">
+    @foreach ($viewData['products'] as $product)
+    <div class="col-md-6 col-lg-4 mb-2">
+        <a href="{{ route('product.show', ['id' => $product['id']]) }}">
+            <img src="{{asset('/storage/' . $product->getImage())}}" alt="" class="img-fluid rounded">
+        </a>
+    </div>
+    @endforeach
+
+    <div class="container py-5">
+      <div class="row row-cols-2 row-cols-md-4">
+        <div class="col-auto">
+          <span class="rounded float-start"><i class="fa-solid fa-phone-flip fa-lg" style="color: #F28123;"></i><b> Give us a call:</b></span>
+          <span class="rounded float-start px-2">
+            <p class="">+00 (123) 456 7890</p>
+          </span>
+        </div>
+        <div class="col-auto">
+          <span class="rounded float-start"><i class="fa-solid fa-envelope fa-lg" style="color: #F28123;"></i><b> Send us a mail:</b></span>
+          <span class="rounded float-start px-2">
+            <p class="">support@domain.com</p>
+          </span>
+        </div>
+        <div class="col-auto">
+          <span class="rounded float-start"><i class="fa-solid fa-clock fa-lg" style="color: #F28123;"></i><b> Monday - Saturday:</b></span>
+          <span class="rounded float-start px-2">
+            <p class="fs-">08.00am - 18.00pm</p>
+          </span>
+        </div>
+        <div class="col-auto">
+          <span class="rounded float-start"><i class="fa-solid fa-location-dot fa-lg"
+              style="color: #F28123;"></i><b> Come visit us:</b></span>
+          <span class="rounded float-start px-2">
+            <p class="">Direction to <a class="link-underline link-underline-opacity-0" style="color: #F28123;"
+                href="#">our location</a></p>
+          </span>
+        </div>
+      </div>
+    </div>
 
 @endsection
