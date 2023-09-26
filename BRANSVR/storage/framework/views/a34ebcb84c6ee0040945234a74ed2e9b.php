@@ -35,6 +35,24 @@
                         <label class="form-label" style="color: #F28123">Image:</label>
                         <input class="form-control form-control-sm " id="formFileSm" type="file" name="image">
                     </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #F28123">Type Product:</label>
+                        <input name="type" value="<?php echo e($viewData['products']->getType()); ?>" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #F28123">Trade smark Product:</label>
+                        <input name="tradesmark" value="<?php echo e($viewData['products']->getTradesmark()); ?>" type="text" class="form-control">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #F28123">Mass Product:</label>
+                        <input name="mass" value="<?php echo e($viewData['products']->getMass()); ?>" type="number" min="0"  class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #F28123">Volume Product:</label>
+                        <input name="volume" value="<?php echo e($viewData['products']->getVolume()); ?>" type="number" min="0"  class="form-control">
+                    </div>
                     <div class="row justify-content-center">
                         <div class="col-auto">
                             <button type="submit" class="btn" style="background-color: #F28123">Edit</button>

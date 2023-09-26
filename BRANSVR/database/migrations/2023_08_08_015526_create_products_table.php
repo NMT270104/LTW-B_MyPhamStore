@@ -17,15 +17,22 @@ return new class extends Migration
             $table -> text("description");
             $table->string('image');
             $table->integer('price');
+            //
+            $table->string('type');
+            $table->string('tradesmark');
+            $table->integer('mass');
+            $table->integer('volume');
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
+        
         Schema::dropIfExists('products');
     }
 };

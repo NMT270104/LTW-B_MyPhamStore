@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>Fresh and Organic</p>
+                    <p>All products you have purchased</p>
                     <h1>Check Out Product</h1>
                 </div>
             </div>
@@ -23,7 +23,7 @@
         <div class="card-body">
 
             <b>Date:</b> <?php echo e($order->getCreatedAt()); ?><br />
-            <b>Total:</b> $<?php echo e($order->getTotal()); ?><br />
+            <b>Total:</b> <?php echo e($order->getTotal()); ?>.000đ<br />
             <table class="table table-bordered table-striped text-center mt-3">
             <thead>
                 <tr>
@@ -44,9 +44,10 @@
 
                     </a>
                     </td>
-                    <td>$<?php echo e($item->getPrice()); ?></td>
+                    <td><?php echo e($item->getPrice()); ?>.000đ</td>
                     <td><?php echo e($item->getQuantity()); ?></td>
                 </tr>
+
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
         </table>
@@ -55,7 +56,7 @@
     </div>
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 <div class="alert alert-danger" role="alert">
-    Seems to be that you have not purchased anything in our store =(.
+    You have not purchased any products yet. Buy our products <a href="<?php echo e(route('product.index')); ?>">here.</a>
 </div>
 <?php endif; ?>
 <?php $__env->stopSection(); ?>

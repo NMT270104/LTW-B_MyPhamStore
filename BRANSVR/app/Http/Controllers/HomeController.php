@@ -19,7 +19,9 @@ class HomeController extends Controller
         $viewData["title"] = "About us - Mỹ Phẩm Store";
         $viewData["subtitle"] = "About us";
         $viewData["description"] = "Project: Bán Mỹ Phẩm SVR";
-        $viewData["author"] = "Developed by: Nguyễn Minh Thư_22-0-21093  Hoàng Thị Kim Anh_22-1-21166";
+        $viewData["author"] = "Developed by: Nguyễn Minh Thư_22-0-21093";
+        $viewData["author2"] = "Hoàng Thị Kim Anh_22-1-21166";
+        
         return view('home.about')->with("viewData", $viewData);
     }
 // public function about(){

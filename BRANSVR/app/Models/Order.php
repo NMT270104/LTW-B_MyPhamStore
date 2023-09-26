@@ -46,6 +46,7 @@ class Order extends Model
     {
         $this->attributes['updated_at'] = $updatedAt;
     }
+    
     public function user()
     {
         return $this->belongsTo(User::class);

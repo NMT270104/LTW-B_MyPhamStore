@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>Fresh and Organic</p>
+                    <p>All products you have purchased</p>
                     <h1>Check Out Product</h1>
                 </div>
             </div>
@@ -22,7 +22,7 @@
         <div class="card-body">
 {{-- insert code card-body --}}
             <b>Date:</b> {{ $order->getCreatedAt() }}<br />
-            <b>Total:</b> ${{ $order->getTotal() }}<br />
+            <b>Total:</b> {{ $order->getTotal() }}.000đ<br />
             <table class="table table-bordered table-striped text-center mt-3">
             <thead>
                 <tr>
@@ -42,9 +42,10 @@
                         {{ $item->getProduct()->getName() }}
                     </a>
                     </td>
-                    <td>${{ $item->getPrice() }}</td>
+                    <td>{{ $item->getPrice() }}.000đ</td>
                     <td>{{ $item->getQuantity() }}</td>
                 </tr>
+
             @endforeach
             </tbody>
         </table>
@@ -53,7 +54,7 @@
     </div>
 @empty
 <div class="alert alert-danger" role="alert">
-    Seems to be that you have not purchased anything in our store =(.
+    You have not purchased any products yet. Buy our products <a href="{{route('product.index')}}">here.</a>
 </div>
 @endforelse
 @endsection

@@ -21,7 +21,7 @@
     <div class="card-body">
         <div class="alert alert-success" role="alert">
             Congratulations, purchase completed. Order number is
-            <b>#{{ $viewData['order']->getId() }}</b>
+            <b>#{{ $viewData['order']->getId() }}. <a class="alert alert-success" href="{{route('myaccount.orders')}}">Check out now!</a></b>
         </div>
     </div>
 </div>

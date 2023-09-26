@@ -12,6 +12,10 @@ class Product extends Model
         'description',
         'price',
         'image',
+        'type',
+        'tradesmark',
+        'mass',
+        'volume',
     ];
     public static function sumPricesByQuantities($products,$productsInSession){
         $total = 0;
@@ -60,7 +64,41 @@ class Product extends Model
     public function setPrice($price) {
         $this
         ->attributes['price'] = $price;
+    }
+    //
+        public function getType() {
+            return $this
+            ->attributes['type'];
         }
+        public function setType($type) {
+            $this
+            ->attributes['type'] = $type;
+        }
+        public function getTradesmark() {
+        return $this
+        ->attributes['tradesmark'];
+        }
+        public function setTradesmark($tradesmark) {
+            $this
+            ->attributes['tradesmark'] = $tradesmark;
+        }
+        public function getMass() {
+            return $this
+            ->attributes['mass'];
+        }
+        public function setMass($mass) {
+            $this
+            ->attributes['mass'] = $mass;
+        }
+        public function getVolume() {
+            return $this
+            ->attributes['volume'];
+        }
+        public function setVolume($volume) {
+            $this
+            ->attributes['volume'] = $volume;
+        }
+//
     public function getCreatedAt() {
         return $this
         ->attributes['created_at'];

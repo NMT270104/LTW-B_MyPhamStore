@@ -41,17 +41,9 @@
             
             <div class="navbar-nav w-100">
                 <a href="{{ route('admin.home.index') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                <div class="nav-item dropdown">
-                    <a href="{{ route('admin.home.index') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                    <div class="dropdown-menu bg-transparent border-0">
-                        <a href="#" class="dropdown-item nav-link">Buttons</a>
-                        <a href="#" class="dropdown-item nav-link">Typography</a>
-                        <a href="#" class="dropdown-item nav-link">Other Elements</a>
-                    </div>
-                </div>
+                
                 <a href="{{ route('admin.product.index') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Manage Product</a>
-                <a href="#" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Form</a>
-                <a href="#" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+
                 <a href="{{route('home.index')}}" class="nav-item nav-link"><i class="fa-solid fa-house"></i>Back to Home</a>
             </div>
         </nav>
@@ -136,11 +128,13 @@
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item text-center">See all notifications</a>
                     </div>
                 </div>
-                <div class="nav-item dropdown">
+                <div class="nav-item dropdown">     
                     <a href="{{ route('admin.home.index') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <img class="rounded-circle me-lg-2" src="{{ asset('/img/undraw_profile.svg') }}" alt="" style="width: 40px; height: 40px;">
-                        <span class="d-none d-lg-inline-flex">Admin</span>
+                        <span class="d-none d-lg-inline-flex text-capitalize">Admin
+                        </span>
                     </a>
+                    
                     <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0">
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item">My Profile</a>
                         <a href="{{ route('admin.home.index') }}" class="dropdown-item">Settings</a>

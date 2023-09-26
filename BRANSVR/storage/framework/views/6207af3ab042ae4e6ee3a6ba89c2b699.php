@@ -47,7 +47,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="<?php echo e(route('home.index')); ?>">
-								<img src="<?php echo e(asset('img/logo.png')); ?>" alt="" style="margin-top: -10px">
+								<img src="<?php echo e(asset('img/logo.avif')); ?>" alt="" style="margin-top: -10px">
 							</a>
 						</div>
 						<!-- logo -->
@@ -55,32 +55,28 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="<?php echo e(route('product.index')); ?>">Shop</a>
+								<li class="current-list-item"><a href="<?php echo e(route('home.index')); ?>">Home</a></li>
+								<li><a href="<?php echo e(route('product.index')); ?>" style="color: #f28123">Shop</a>
 									<ul class="sub-menu">
 										<li><a href="<?php echo e(route('product.index')); ?>">Shop</a></li>
 										<li><a href="<?php echo e(route('myaccount.orders')); ?>">Check Out</a></li>
 										<li><a href="<?php echo e(route('cart.index')); ?>">Cart</a></li>
 									</ul>
 								</li>
-								<li><a href="<?php echo e(route('home.about')); ?>">About</a></li>
-								<li class="current-list-item"><a href="<?php echo e(route('home.index')); ?>">Home</a></li>
-								
-								<li><a href="#">News</a></li>
-								<li><a href="#">Contact</a></li>
-								
+								<li><a href="<?php echo e(route('home.about')); ?>" style="color: #f28123">About</a></li>							
 								<li>
 									<div class="header-icons">
                                         <ul>
-                                            <li><a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a></li>
+                                            <li><a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search" style="color: #f28123"></i></a></li>
                                             <?php if(auth()->guard()->guest()): ?>
-                                            <li><a href="<?php echo e(route('login')); ?>"><i class="fa-solid fa-user"></i></a></li>
+                                            <li><a href="<?php echo e(route('login')); ?>"><i class="fa-solid fa-user" style="color: #f28123"></i></a></li>
                                             <?php else: ?>
-                                            <li><a href="<?php echo e(route('cart.index')); ?>"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="<?php echo e(route('admin.home.index')); ?>"><i class="fa-solid fa-toolbox"></i></a></li>
+                                            <li><a href="<?php echo e(route('cart.index')); ?>"><i class="fas fa-shopping-cart" style="color: #f28123"></i></a></li>
+                                            <li><a href="<?php echo e(route('admin.home.index')); ?>"><i class="fa-solid fa-toolbox" style="color: #f28123"></i></a></li>
                                             <li>
 											<form id="logout" action="<?php echo e(route('logout')); ?>" method="POST">
                                             <a role="button"
-                                            onclick="document.getElementById('logout').submit();"><i class="fa-solid fa-right-from-bracket"></i></a>
+                                            onclick="document.getElementById('logout').submit();"><i class="fa-solid fa-right-from-bracket" style="color: #f28123"></i></a>
                                             <?php echo csrf_field(); ?>
                                             </form>
                                             </li>
@@ -90,7 +86,7 @@
 								</li>
 							</ul>
 						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search" style="color: #f28123"></i></a>
 						<div class="mobile-menu"></div>
 						<!-- menu end -->
 					</div>
@@ -118,7 +114,7 @@
 	<!-- end search area -->
 </header>
 
-   
+
     <!-- header -->
     <div class="container my-4">
         <?php echo $__env->yieldContent('content'); ?>
@@ -135,6 +131,36 @@
                      <b>22-1-21166</b>
             </small>
         </div>
+		<button style="background-color:#f28123; width:3%; float: right;margin-top: -40px" type="button"
+                class="btn btn-floating btn-lg opacity-50" id="btn-back-to-top"><i class="fa-solid fa-angle-up"
+                    style="color: #ffffff;"></i></button>
+            <script>
+                //Get the button
+                let mybutton = document.getElementById("btn-back-to-top");
+
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction();
+                };
+
+                function scrollFunction() {
+                    if (
+                        document.body.scrollTop > 20 ||
+                        document.documentElement.scrollTop > 20
+                    ) {
+                        mybutton.style.display = "block";
+                    } else {
+                        mybutton.style.display = "none";
+                    }
+                }
+                // When the user clicks on the button, scroll to the top of the document
+                mybutton.addEventListener("click", backToTop);
+
+                function backToTop() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
     </div>
     <!-- footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">

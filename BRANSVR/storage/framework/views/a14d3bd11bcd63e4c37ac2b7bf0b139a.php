@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>Fresh and Organic</p>
+                    <p>All the products you have selected are here</p>
                     <h1>Cart</h1>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                         
                             <tr class="total-data">
                                 <td><strong>Total: </strong></td>
-                                <td>$<?php echo e($viewData["total"]); ?></td>
+                                <td><?php echo e($viewData["total"]); ?>.000đ</td>
                             </tr>
                         </tbody>
                     </table>
@@ -72,6 +72,7 @@
                     </div>
                     <div class="cart-buttons">
                         <a href="<?php echo e(route('cart.delete')); ?>" class="boxed-btn">Remove all products</a>
+                        <a href="<?php echo e(route('product.index')); ?>" class="boxed-btn">Buy more</a>
                     </div>
                 </div>
 
@@ -79,8 +80,9 @@
                     <h3>Apply Coupon</h3>
                     <div class="coupon-form-wrap">
                         <form action="<?php echo e(route('cart.index')); ?>">
-                            <p><input type="text" placeholder="Coupon"></p>
-                            <p><input type="submit" value="Apply"></p>
+                            <input class="form-control " style="height: 50px;" type="text" placeholder="Coupon">
+                            <br>
+                            <input class="text-white" type="submit" value="Apply">
                         </form>
                     </div>
                 </div>

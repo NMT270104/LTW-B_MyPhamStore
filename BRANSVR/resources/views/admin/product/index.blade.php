@@ -4,7 +4,7 @@
 
 <div class="container-fluid pt-4 p-4 ">
     <div class="row g-4">
-        <div class="col-sm-12 col-xl-5">
+        <div class="col-sm-12 col-xl-5" style="height: 50%">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4 text-center" style="color: #F28123">Create Product</h6>
                 @if($errors->any())
@@ -32,6 +32,23 @@
                     <div class="mb-3">
                         <label class="form-label" style="color: #F28123">Image:</label>
                         <input class="form-control form-control-sm " id="formFileSm" type="file" name="image">
+                    </div>
+                    {{-- ttct --}}
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #F28123">Type Product:</label>
+                        <input name="name" value="{{ old('type') }}" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #F28123">Tradesmark Product:</label>
+                        <input name="name" value="{{ old('tradesmark') }}" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #F28123">Mass Product:</label>
+                        <input name="name" value="{{ old('mass') }}" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #F28123">Volume Product:</label>
+                        <input name="name" value="{{ old('volume') }}" type="text" class="form-control">
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-auto">

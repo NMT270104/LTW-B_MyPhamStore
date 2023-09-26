@@ -22,12 +22,22 @@ class AdminProductController extends Controller
         "description" => "required",
         "price" => "required|numeric|gt:0",
         'image' => 'image',
+        //
+        "type" => "required|max:255",
+        "tradesmark" => "required|max:255",
+        "mass" => "required|numeric|gt:0",
+        "volume" => "required|numeric|gt:0",
         ]);
         $newProduct = new Product();
         $newProduct->setName($request->input('name'));
         $newProduct->setDescription($request->input('description'));
         $newProduct->setPrice($request->input('price'));
         $newProduct->setImage("game.png");
+        //
+        $newProduct->setType($request->input('type'));
+        $newProduct->setTradesmark($request->input('tradesmark'));
+        $newProduct->setMass($request->input('mass'));
+        $newProduct->setVolume($request->input('volume'));
         $newProduct->save();
         // $creationData = $request->only(["name", "description", "price"]);
         // $creationData["image"] = "game.png";
@@ -48,7 +58,7 @@ class AdminProductController extends Controller
     }
     public function edit($id){
         $viewData = [];
-        $viewData['title'] = "Admin page - Edit Product - Online Store";
+        $viewData['title'] = "Admin page - Edit Product - Mỹ Phẩm Store";
         $viewData['products'] = Product::FindOrFail($id);
         return view ("admin.product.edit") -> with("viewData",$viewData);
     }
@@ -58,11 +68,21 @@ class AdminProductController extends Controller
             "description" => "required",
             "price" => "required|numeric|gt:0",
             'image' => 'image',
+            //
+            "type" => "required|max:255",
+            "tradesmark" => "required|max:255",
+            "mass" => "required|numeric|gt:0",
+            "volume" => "required|numeric|gt:0",
         ]);
         $product = Product::FindOrFail($id);
         $product-> setName($request -> input('name'));
         $product-> setDescription($request -> input('description'));
         $product-> setPrice($request -> input('price'));
+        
+        $product->setType($request->input('type'));
+        $product->setTradesmark($request->input('tradesmark'));
+        $product->setMass($request->input('mass'));
+        $product->setVolume($request->input('volume'));
         if ($request -> hasFile('image')) {
             $imageName = $product -> getId().".".$request -> file('image')->extension();
             Storage::disk('public')->put(
@@ -71,6 +91,7 @@ class AdminProductController extends Controller
             );
             $product->setImage($imageName);
         }
+        
         $product->save();
         return redirect()->route('admin.product.index');
         
